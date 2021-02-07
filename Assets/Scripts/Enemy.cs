@@ -53,4 +53,13 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        string name = col.gameObject.name;
+        if (name.Contains("Border"))
+        {
+            OnEnemyDestroyed(gameObject);
+        }
+    }
 }
